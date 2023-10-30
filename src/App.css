@@ -40,3 +40,7 @@
 .text {
   color: coral;
 }
+
+button{
+  margin: 0 10px;
+}
