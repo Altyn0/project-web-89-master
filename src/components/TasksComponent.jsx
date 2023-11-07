@@ -1,7 +1,7 @@
 import { Card } from 'antd'
 import React from 'react'
 
-const TasksComponent = ({tasks}) => {
+const TasksComponent = (tasks) => {
     
     return (
     <Card className='mt-4'>
