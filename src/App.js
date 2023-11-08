@@ -10,7 +10,8 @@ function App() {
 			<div className='col-8 offset-2'>
 			<List 
 			 dataSource={posts}
-			 renderItem={(item, _index) => (<List.Item key={item.id}>
+			 renderItem={(item, _index) => (
+			 	<List.Item key={item.id} >
 				<List.Item.Meta title={item.title} description={item.body} />  
 				</List.Item>
 				)}  
