@@ -9,21 +9,20 @@ import TasksComponent from './components/TasksComponent';
 import { useState } from 'react';
 import ScoreComponent from './components/ScoreComponent';
 import { ButtonComponent } from './components/ButtonComponent';
+import { users } from './data/users';
+import ListUserItem from './components/ListUserItem';
 
 function App() {
-	const [score, setScore] = useState(0);
+	const usersWithCompany = users.filter((element) => element.company)
+	const handleCheckEmail = (id) => {
+		const user = users.find(element => element.id===id);
+		user &&	alert(user.email);
+		
+	};
 	return (
 	<div className='container mt-4'>
 		<div className='col-8 offset-2'>
-			<ScoreComponent score={score}/>
-			<div className="row">
-				<div className="col">
-					<ButtonComponent type='increase' onPress={val => setScore(score + val)}/>
-				</div>
-				<div className="col">
-					<ButtonComponent onPress={val => setScore(score + val)}/>
-				</div>
-			</div>
+			{usersWithCompany.map((item,index) =>  (<ListUserItem onCheckEmail={() => handleCheckEmail(item.id)} user={item} color={index % 2 ? 'coral':'green'} />  ))}
 		</div>
 	</div>
 	
